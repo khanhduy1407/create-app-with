@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/khanhduy1407/create-app-with.git"
   },
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
@@ -18,8 +19,34 @@
     "template",
     "app"
   ],
+  "type": "module",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo test"
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit",
+    "test": "node index.js playground-test",
+    "release": "tsx scripts/release.ts",
+    "ci-publish": "tsx scripts/publishCI.ts"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.17.2",
+    "@types/picomatch": "^2.3.0",
+    "@types/prompts": "^2.4.4",
+    "@witejs/release-scripts": "^1.2.0",
+    "cross-spawn": "^7.0.3",
+    "execa": "^7.2.0",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.2",
+    "unbuild": "^1.2.1"
   }
 }
