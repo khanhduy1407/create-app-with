@@ -15,9 +15,7 @@ export default defineBuildConfig({
   },
   hooks: {
     'rollup:options'(ctx, options) {
-      options.plugins = [
-        options.plugins,
-      ]
+      options.plugins = [options.plugins]
     },
   },
 })

@@ -5,8 +5,6 @@
 *.local
 *.log
 /.vscode/
-/docs/.witepress/cache
-/packages/wite/LICENSE
 dist
 dist-ssr
 explorations

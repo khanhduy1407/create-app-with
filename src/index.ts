@@ -4,11 +4,7 @@ import { fileURLToPath } from 'node:url'
 import spawn from 'cross-spawn'
 import minimist from 'minimist'
 import prompts from 'prompts'
-import {
-  cyan,
-  red,
-  reset,
-} from 'kolorist'
+import { cyan, red, reset } from 'kolorist'
 
 // Avoids auto conversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string.
@@ -31,7 +27,7 @@ type Framework = {
 }
 /**
  * Using for build tools
- * 
+ *
  * @soon
  */
 type FrameworkVariant = {
@@ -50,9 +46,10 @@ const FRAMEWORKS: Framework[] = [
   },
 ]
 
-const TEMPLATES = FRAMEWORKS.map(
-  (f) => [f.name],
-).reduce((a, b) => a.concat(b), [])
+const TEMPLATES = FRAMEWORKS.map((f) => [f.name]).reduce(
+  (a, b) => a.concat(b),
+  [],
+)
 
 const renameFiles: Record<string, string | undefined> = {
   _gitignore: '.gitignore',
