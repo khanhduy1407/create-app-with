@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/khanhduy1407/create-app-with.git"
   },
+  "bugs": {
+    "url": "https://github.com/khanhduy1407/create-app-with/issues"
+  },
   "license": "MIT",
   "keywords": [
     "framework",
@@ -17,9 +20,6 @@
     "app"
   ],
   "type": "module",
-  "engines": {
-    "node": "^14.18.0 || >=16.0.0"
-  },
   "bin": {
     "create-app-with": "index.js",
     "caw": "index.js"
@@ -34,15 +34,17 @@
     "postinstall": "simple-git-hooks",
     "format": "prettier --write --cache .",
     "lint": "eslint --cache .",
-    "dev": "unbuild --stub",
-    "build": "unbuild",
+    "dev": "rimraf dist && unbuild --stub",
+    "build": "rimraf dist && unbuild",
     "typecheck": "tsc --noEmit",
     "test": "node index.js playground-test",
     "release": "tsx scripts/release.ts",
-    "ci-publish": "tsx scripts/publishCI.ts"
+    "ci-publish": "tsx scripts/publishCI.ts",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^11.0.1",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.17.2",
     "@types/picomatch": "^2.3.0",
@@ -50,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "@witejs/release-scripts": "^1.2.0",
+    "conventional-changelog-cli": "^2.2.2",
     "cross-spawn": "^7.0.3",
     "eslint": "^8.46.0",
     "eslint-define-config": "^1.22.0",
@@ -57,6 +60,7 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-regexp": "^1.15.0",
     "execa": "^7.2.0",
+    "fs-extra": "^11.1.1",
     "kolorist": "^1.8.0",
     "lint-staged": "^13.2.3",
     "minimist": "^1.2.8",
@@ -79,6 +83,9 @@
     ]
   },
   "packageManager": "pnpm@8.12.0",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
   "publishConfig": {
     "access": "public"
   }
