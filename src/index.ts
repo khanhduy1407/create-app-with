@@ -10,7 +10,7 @@ import {
   reset,
 } from 'kolorist'
 
-// Avoids autoconversion to number of the project name by defining that the args
+// Avoids auto conversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string.
 const argv = minimist<{
   t?: string
