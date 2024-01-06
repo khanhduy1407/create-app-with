@@ -10,4 +10,6 @@
 # 1.0.0-beta.0 (2024-01-06)
 
 
+### Features
 
+* add react framework
