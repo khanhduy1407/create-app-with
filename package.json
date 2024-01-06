@@ -37,7 +37,7 @@
     "dev": "rimraf dist && unbuild --stub",
     "build": "rimraf dist && unbuild",
     "typecheck": "tsc --noEmit",
-    "test": "node index.js playground-test",
+    "test": "npm run build && node index.js playground-test",
     "release": "tsx scripts/release.ts",
     "ci-publish": "tsx scripts/publishCI.ts",
     "prepublishOnly": "npm run build"

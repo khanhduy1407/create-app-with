@@ -39,6 +39,12 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
+    name: 'angular',
+    displayName: 'Angular',
+    color: cyan,
+    commandRun: 'npm exec @angular/cli new TARGET_DIR',
+  },
+  {
     name: 'react',
     displayName: 'React',
     color: cyan,
